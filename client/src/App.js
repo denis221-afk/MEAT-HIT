@@ -29,7 +29,7 @@ class App extends Component {
   getItemBasket = async (id) => {
     const oldData = this.state.basketData;
     await axios
-      .post('http://192.168.0.24:7000/API/ITEM', {
+      .post('http://localhost:7000/API/ITEM', {
         _id: id
       })
       .then(res => oldData.push(res.data.data))

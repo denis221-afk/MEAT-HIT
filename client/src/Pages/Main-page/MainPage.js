@@ -25,7 +25,7 @@ class MainPage extends Component {
 
     getData = () => {
         axios
-         .get('http://192.168.0.24:7000/API/GET')
+         .get('http://localhost:7000/API/GET')
          .then(res => this.setState({
             data: res.data.cards
          }))
@@ -40,7 +40,7 @@ class MainPage extends Component {
         const data = this.state.data;
         this.splice(data, id)
         await axios 
-         .post('http://192.168.0.24:7000/API/LIKE', {
+         .post('http://localhost:7000/API/LIKE', {
             _id: id
          })
         

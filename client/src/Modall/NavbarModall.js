@@ -47,7 +47,7 @@ class NavbarModall extends Component {
         this.setState({spinner: true})
 
         const {term} = this.state
-        Axios.post('http://192.168.0.24:7000/API/SEARCH', {
+        Axios.post('http://localhost:7000/API/SEARCH', {
             Title: term
         })
         .then(this.setState({spinner: false}))

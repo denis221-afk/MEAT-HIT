@@ -20,7 +20,7 @@ class Slider extends Component {
 
 
     getProduction = async () => {
-        await Axios .get('http://192.168.0.24:7000/API/GETBOX').then(res => this.setState({data: res.data.data}))
+        await Axios .get('http://localhost:7000/API/GETBOX').then(res => this.setState({data: res.data.data}))
     }
 
     render() {

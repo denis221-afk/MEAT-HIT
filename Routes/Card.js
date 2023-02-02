@@ -61,12 +61,14 @@ router.post('/API/LIKE', async (req, res) => {
 
 router.post('/API/ITEM', async (req, res) => {
     const {_id} = req.body;
-    
 
-    const dataItem = await ModelsCard.findOne({ _id })
-    res.status(200).json({
-        data: dataItem,
-    })
+    const dataItem = await ModelsCard.findById(_id)
+    if(dataItem) {
+        res.status(200).json({
+            data: dataItem,
+        })
+    }
+
 
 })
 

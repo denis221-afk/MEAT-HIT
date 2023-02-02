@@ -2,7 +2,7 @@ const BasketItem = ({fileFollder, Title, Price, deleteItem, Subtitle}) => {
     return(
         <li className="basketItem">
             <div>
-                <img src={`./fileFolder/${fileFollder}/Main.jpg`} alt="Item" />
+                <img src={`/fileFolder/${fileFollder}/Main.jpg`} alt="Item" />
                 <span className="Name">{Title}</span>
             </div>
             <div>

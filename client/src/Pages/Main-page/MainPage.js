@@ -4,6 +4,7 @@ import '../../Style/Main.scss';
 import images from '../../Assets/Intro/bg.png';
 import Slider from '../../Component/Slider/Slider';
 import CardItem from '../../Component/Cards/CardsItem';
+import { NavLink } from 'react-router-dom';
 
 
 class MainPage extends Component {
@@ -20,7 +21,6 @@ class MainPage extends Component {
    async componentDidMount() {
         await this.getData();
         
-    
     }
 
     getData = () => {
@@ -65,11 +65,11 @@ class MainPage extends Component {
         
         const element = data.map((item, index) => {
             const {fileFollder, Title, Subtitle, Descer, Weight, Price, Like, _id} = item;
-            const {onItem} = this.props;
+            const {onItem, getID} = this.props;
 
             if(index <= 5) {
                 return(
-                    <CardItem fileFollder={fileFollder} Title={Title} Subtitle={Subtitle} Descer={Descer} Weight={Weight} Price={Price} Like={Like} key={index} onLike={() => this.onLike(_id)} onItem={() => onItem(_id)} _id={_id}/>
+                    <CardItem fileFollder={fileFollder} Title={Title} Subtitle={Subtitle} Descer={Descer} Weight={Weight} Price={Price} Like={Like} key={index} onLike={() => this.onLike(_id)} onItem={() => onItem(_id)} _id={_id} getID={() => getID(_id)}/>
                 )
             }
 
@@ -79,13 +79,13 @@ class MainPage extends Component {
 
         return(
             <div>
-               <div class="Container">
+               <div className="Container">
                 <section className="Main_intro">
                     <div className='intro_info'>
                         <h1 className='title'><span>M</span>EAT-HIT</h1>
                         <h2 className='subtitle'>Задоволення в кожній пачці...</h2>
                         <p className='description'>Ми молода компанія, яка займається виготовленням крафтових снеків. В нашому магазині ви знайдете натуральну та смачну продукцію, яка стане вашою улюбленою закускою. Джерки, пивчики та грiнки найвищої якості, приготовані з любов'ю. </p>
-                        <a class="uk-button uk-button-danger btn" href="#">Замовити</a>
+                        <a className="uk-button uk-button-danger btn" href="#">Замовити</a>
                     </div> 
                     <img src={images} alt="intro" />
                     <div className='line'></div>
@@ -93,7 +93,7 @@ class MainPage extends Component {
                </div>
              
     
-               <section class="pruduction">
+               <section className="pruduction">
                     <div className='center'>
                         <h3 className='section_title'>Наша <span>продукція</span></h3>
                     </div>
@@ -102,12 +102,12 @@ class MainPage extends Component {
     
     
                 <section className='Main_catalog'>
-                    <div class="Container">
+                    <div className="Container">
                         <div className='Catalog_wrapper'>
                             {element}
                         </div>
                         <div className='center'>
-                            <a href="#" className="uk-button uk-button-danger uk-margin-small-right btn">Каталог</a>
+                            <NavLink to="/Catalog" className="uk-button uk-button-danger uk-margin-small-right btn">Каталог</NavLink>
                         </div>
                     </div>
                 </section>

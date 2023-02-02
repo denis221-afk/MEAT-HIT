@@ -104,6 +104,7 @@ class NavbarModall extends Component {
                     <div className="navbar__body">
                     <div className="uk-width-1-1@s">
                         <ul className="uk-nav-default uk-nav-divider" uk-nav={toString()}>
+                            <li><a href="#">Каталог</a></li>
                             <li><a href="#">Про нас</a></li>
                             <li><a href="#">Відгуки клієнтів</a></li>
                             <li><a href="#">Оплата і доставка</a></li>
@@ -124,7 +125,7 @@ class NavbarModall extends Component {
                         <button className='btn btn-search'>Пошук</button>
                     </form>
                 
-                    <ul class={data.length > 0 ? 'uk-list uk-list-divider listItem' : 'uk-list uk-list-divider'}>
+                    <ul className={data.length > 0 ? 'uk-list uk-list-divider listItem' : 'uk-list uk-list-divider'}>
                         {element}
                     </ul>
                     </div>
@@ -139,7 +140,7 @@ class NavbarModall extends Component {
                             <a href="#" onClick={() => setActiveBasket(false)} uk-icon="icon: close"></a>
                         </div>
                         <div className='basket_body'>
-                        <ul class="uk-list uk-list-divider">
+                        <ul className="uk-list uk-list-divider">
                             {item}
                         </ul>
                         </div>

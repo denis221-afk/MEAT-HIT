@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       Loadding: true,
       basketData: [],
-      total: 0
+      total: 0, 
+      id: '',
     }
   }
 
@@ -37,9 +38,14 @@ class App extends Component {
         basketData: oldData
       }))
       this.calcTotal();
-
   }
 
+
+  getID = (id) => {
+    this.setState({
+      id: id
+    })
+  }
 
   calcTotal = () => {
     try{
@@ -69,13 +75,13 @@ class App extends Component {
   }
 
   render() {
-    const {Loadding, basketData, total} = this.state;
+    const {Loadding, basketData, total, id} = this.state;
 
     const onLoadding = Loadding ? <Loaddings /> : null;
     return(
       <div className='App'>
         {onLoadding}
-        <IndexPage basketData={basketData} onItem={(id) => this.getItemBasket(id)} total={total} deleteItem={(index) => this.deleteBasketItem(index)}/>
+        <IndexPage basketData={basketData} onItem={(id) => this.getItemBasket(id)} total={total} deleteItem={(index) => this.deleteBasketItem(index)} getID={(id) => this.getID(id)} id={id}/>
       </div>
     )
   }

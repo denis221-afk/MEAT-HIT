@@ -31,7 +31,7 @@ const Navbar = ({basketData, total, deleteItem}) => {
                         <nav className='menu'>
                             <NavLink to="/"><span uk-icon="icon: home"></span>Головна</NavLink>
                             <a href="#" onClick={() => setActiveModall(true)} className="search"><span uk-icon="icon: search"></span>Пошук</a>
-                            <a href="#" onClick={() => setActiveBasket(true)} className={indexBasket ? 'active_basket': 'basket_link'}><span uk-icon="icon: cart"></span>Корзина <span class="uk-badge">{basketData.length}</span></a>
+                            <a href="#" onClick={() => setActiveBasket(true)} className={indexBasket ? 'active_basket': 'basket_link'}><span uk-icon="icon: cart"></span>Корзина <span className="uk-badge">{basketData.length}</span></a>
                         </nav>
                     </div>
                 </div>
